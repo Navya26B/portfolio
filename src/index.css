@@ -12,8 +12,8 @@
 
 :root {
   --color-bg: black;
-  --color-bg-variant: #2c2c6c;
-  --color-primary: #4db5ff;
+  --color-bg-variant: #2d1313;
+  --color-primary: white;
   --color-primary-variant: rgba(77, 181, 255, 0.4);
   --color-white: #fff;
   --color-light: rgba(255, 255, 255, 0.6);
@@ -38,6 +38,7 @@ body {
   background-color: var(--color-bg);
   color: var(--color-white);
   line-height: 1.7;
+  background-image: url('./assets/Background.jpg');
 }
 
 .container {

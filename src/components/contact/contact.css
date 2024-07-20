@@ -7,6 +7,7 @@
 
 .contact__options {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     gap: 1.2rem;

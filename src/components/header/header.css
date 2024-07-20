@@ -19,6 +19,55 @@ header {
   margin-top: 2.5rem;
 }
 
+.wrapper{
+  display: inline-flex;
+}
+
+.wrapper .static-text{
+  color: #fff;
+  font-size: 60px;
+  font-weight: 400;
+}
+
+.wrapper .dynamic-text{
+  margin-left: 15px;
+  height: 90px;
+  line-height: 90px;
+  /* overflow: hidden; */
+}
+
+.dynamic-text li{
+  color: #FC6D6D;
+  list-style: none;
+  font-size: 60px;
+  font-weight: 500;
+  position: relative;
+  top: 0;
+  animation: slide 4s steps(10) infinite;
+}
+  
+.dynamic-txts li span{
+  position: relative;
+}
+
+.dynamic-txts li span::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-left: 2px solid #FC6D6D;
+  animation: typing 1.5s steps(10) infinite
+  }
+
+@keyframes typing {
+  40%, 60%{
+    left: calc(100% + 30px);
+  }
+  100%{
+    left: 0;
+  }
+}
 
 @media screen and (max-width: 1024px){
   header {

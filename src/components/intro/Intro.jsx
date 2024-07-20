@@ -1,9 +1,36 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { FaAward } from 'react-icons/fa';
 import ME from '../../assets/me.jpg';
 import './intro.css';
 
 const Intro = () => {
+  const paragraphRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('slide-in');
+          } else {
+            entry.target.classList.remove('slide-in');
+          }
+        });
+      },
+      { threshold: 0.1 } // Trigger when 10% of the element is in view
+    );
+
+    if (paragraphRef.current) {
+      observer.observe(paragraphRef.current);
+    }
+
+    return () => {
+      if (paragraphRef.current) {
+        observer.unobserve(paragraphRef.current);
+      }
+    };
+  }, []);
+
   return (
     <section id="about">
       <h5>Get to know</h5>
@@ -22,12 +49,14 @@ const Intro = () => {
               <small>1 year</small>
             </article>
           </div>
-          <p>I have experience at Cisco as a Consultant Engineer, where I gained hands-on experience in front-end development. During this time, I worked extensively with HTML, CSS, and JavaScript to build user interfaces and web applications. My responsibilities included designing and implementing responsive web pages, ensuring cross-browser compatibility, and collaborating with back-end developers to create seamless user experiences. I build strong foundation in front-end technologies.</p>
+          <p ref={paragraphRef}>
+            I have experience at Cisco as a Consultant Engineer, where I gained hands-on experience in front-end development. During this time, I worked extensively with HTML, CSS, JavaScript, and React.js to build user interfaces and web applications. My responsibilities included designing and implementing responsive web pages, ensuring cross-browser compatibility, and collaborating with back-end developers to create seamless user experiences. I built a strong foundation in front-end technologies.
+          </p>
           <a href="#contact" className="btn btn-primary">Let's Talk</a>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Intro
+export default Intro;
