@@ -1,10 +1,39 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { MdOutlineEmail } from 'react-icons/md';
 import './contact.css';
 
 const Contact = () => {
+  const contactRef = useRef(null);
+
+  useEffect(() => {
+    const refCopy = contactRef.current; // Copy the ref to a local variable
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          } else {
+            entry.target.classList.remove('show');
+          }
+        });
+      },
+      { threshold: 0.5}
+    );
+
+    if (refCopy) {
+      observer.observe(refCopy);
+    }
+
+    return () => {
+      if (refCopy) {
+        observer.unobserve(refCopy);
+      }
+    };
+  }, []);
+
   return (
-    <section id="contact">
+    <section id="contact" ref={contactRef} className="hidden">
       <h5>Get In Touch</h5>
       <h2>Contact Me</h2>
       <div className="container contact__container">
@@ -16,7 +45,7 @@ const Contact = () => {
             <a href="mailto:navyasribuchepalli@gmail.com">Send a message</a>
           </article>
         </div>
-        <form >
+        <form>
           <input
             type="text"
             placeholder="Your Full Name"
