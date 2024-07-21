@@ -7,7 +7,6 @@ const Intro = () => {
   const paragraphRef = useRef(null);
 
   useEffect(() => {
-    const refCopy = Intro.current; 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -21,13 +20,13 @@ const Intro = () => {
       { threshold: 0.1 } // Trigger when 10% of the element is in view
     );
 
-    if (refCopy) {
-      observer.observe(refCopy);
+    if (paragraphRef.current) {
+      observer.observe(paragraphRef.current);
     }
 
     return () => {
-      if (refCopy) {
-        observer.unobserve(refCopy);
+      if (paragraphRef.current) {
+        observer.unobserve(paragraphRef.current);
       }
     };
   }, []);
