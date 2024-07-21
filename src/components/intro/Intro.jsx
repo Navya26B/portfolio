@@ -1,32 +1,33 @@
-import React, { useEffect, useRef } from 'react';
-import { FaAward } from 'react-icons/fa';
-import ME from '../../assets/me.jpg';
-import './intro.css';
+import React, { useEffect, useRef } from "react";
+import { FaAward } from "react-icons/fa";
+import ME from "../../assets/me.jpg";
+import "./intro.css";
 
 const Intro = () => {
   const paragraphRef = useRef(null);
 
   useEffect(() => {
+    const refCopy = Intro.current; 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('slide-in');
+            entry.target.classList.add("slide-in");
           } else {
-            entry.target.classList.remove('slide-in');
+            entry.target.classList.remove("slide-in");
           }
         });
       },
       { threshold: 0.1 } // Trigger when 10% of the element is in view
     );
 
-    if (paragraphRef.current) {
-      observer.observe(paragraphRef.current);
+    if (refCopy) {
+      observer.observe(refCopy);
     }
 
     return () => {
-      if (paragraphRef.current) {
-        observer.unobserve(paragraphRef.current);
+      if (refCopy) {
+        observer.unobserve(refCopy);
       }
     };
   }, []);
@@ -50,9 +51,18 @@ const Intro = () => {
             </article>
           </div>
           <p ref={paragraphRef}>
-            I have experience at Cisco as a Consultant Engineer, where I gained hands-on experience in front-end development. During this time, I worked extensively with HTML, CSS, JavaScript, and React.js to build user interfaces and web applications. My responsibilities included designing and implementing responsive web pages, ensuring cross-browser compatibility, and collaborating with back-end developers to create seamless user experiences. I built a strong foundation in front-end technologies.
+            I have experience at Cisco as a Consultant Engineer, where I gained
+            hands-on experience in front-end development. During this time, I
+            worked extensively with HTML, CSS, JavaScript, and React.js to build
+            user interfaces and web applications. My responsibilities included
+            designing and implementing responsive web pages, ensuring
+            cross-browser compatibility, and collaborating with back-end
+            developers to create seamless user experiences. I built a strong
+            foundation in front-end technologies.
           </p>
-          <a href="#contact" className="btn btn-primary">Let's Talk</a>
+          <a href="#contact" className="btn btn-primary">
+            Let's Talk
+          </a>
         </div>
       </div>
     </section>
