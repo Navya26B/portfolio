@@ -7,6 +7,8 @@ const Intro = () => {
   const paragraphRef = useRef(null);
 
   useEffect(() => {
+    const currentParagraph = paragraphRef.current;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -20,13 +22,13 @@ const Intro = () => {
       { threshold: 0.1 } // Trigger when 10% of the element is in view
     );
 
-    if (paragraphRef.current) {
-      observer.observe(paragraphRef.current);
+    if (currentParagraph) {
+      observer.observe(currentParagraph);
     }
 
     return () => {
-      if (paragraphRef.current) {
-        observer.unobserve(paragraphRef.current);
+      if (currentParagraph) {
+        observer.unobserve(currentParagraph);
       }
     };
   }, []);
