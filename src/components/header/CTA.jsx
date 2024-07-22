@@ -1,6 +1,7 @@
 import React from 'react';
 import CV from '../../assets/Navya_cv.pdf';
 import { BsLinkedin } from 'react-icons/bs';
+import { FaGithub } from 'react-icons/fa'; // Import GitHub icon
 
 const CTA = () => {
   return (
@@ -12,6 +13,13 @@ const CTA = () => {
         Let's talk
       </a>
       <a href="https://www.linkedin.com/in/navyasribuchepalli/" target="_blank" rel="noreferrer" ><BsLinkedin className='linkedin' style={{ fontSize: '2em', marginTop: '1rem'  }} /></a>
+      <a 
+        href="https://github.com/Navya26B"  // Replace with your GitHub profile URL
+        target="_blank" 
+        rel="noreferrer"
+      >
+        <FaGithub className='github' style={{ fontSize: '2em', marginTop: '1rem' }} /> {/* GitHub icon */}
+      </a>
     </div>
   ); 
 };
