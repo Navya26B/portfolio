@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# My Portfolio
+Welcome to my portfolio repository. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![screencapture-Portfolio](https://github.com/user-attachments/assets/ff5f6bda-fd10-4670-ae79-e06101c5e266)
 
-## Available Scripts
 
-In the project directory, you can run:
+## Components
+### Header
+The header component typically includes navigation links that allow users to download my CV and jump to the contact section. It provides a quick overview of the main sections and is usually fixed at the top of the page for easy access.
 
-### `npm start`
+### Intro
+The introduction section provides a brief overview of who I am and my professional focus.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Experience
+The experience section sets the tone for the rest of the portfolio and gives visitors a snapshot of my skills. This section is crucial for demonstrating my practical experience and expertise in my field.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Education
+The education section lists my academic background. It includes the institutions I have attended and the degrees I have earned. This section helps establish my foundational knowledge and qualifications.
 
-### `npm test`
+### Contact
+The contact section provides ways for visitors to get in touch with me. This includes my email address or a contact form.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Footer
+The footer component includes additional navigation links. It serves as the closing section of the portfolio and can reinforce my personal brand.
 
-### `npm run build`
+## Technologies Used
+### HTML: 
+The standard markup language for creating web pages. It is used for structuring the content of the portfolio.
+### CSS: 
+A stylesheet language used for describing the presentation of the document written in HTML. CSS is used to style the portfolio, including layout, colors, and fonts.
+### JavaScript: 
+A programming language used to create interactive effects within web browsers. It adds functionality to the portfolio, such as form validation, animations, and dynamic content updates.
+### React: 
+A JavaScript library for building user interfaces. React is used for creating reusable UI components and managing the state of the application efficiently.
+Contact
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### You can contact me at navyasribuchepalli@gmail.com.
