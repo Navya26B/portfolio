@@ -1,9 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { MdOutlineEmail } from 'react-icons/md';
 import './contact.css';
 
 const Contact = () => {
   const contactRef = useRef(null);
+  const [email, setEmail] = useState('');
+  const [emailError, setEmailError] = useState('');
 
   useEffect(() => {
     const refCopy = contactRef.current; // Copy the ref to a local variable
@@ -18,7 +20,7 @@ const Contact = () => {
           }
         });
       },
-      { threshold: 0.5}
+      { threshold: 0.5 }
     );
 
     if (refCopy) {
@@ -31,6 +33,28 @@ const Contact = () => {
       }
     };
   }, []);
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+
+    // Regular expression for basic email validation
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailPattern.test(e.target.value)) {
+      setEmailError('Please enter a valid email address');
+    } else {
+      setEmailError('');
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (emailError) {
+      alert('Please fix the errors before submitting');
+    } else {
+      // Handle form submission
+      alert('Form submitted successfully');
+    }
+  };
 
   return (
     <section id="contact" ref={contactRef} className="hidden">
@@ -45,7 +69,7 @@ const Contact = () => {
             <a href="mailto:navyasribuchepalli@gmail.com">Send a message</a>
           </article>
         </div>
-        <form>
+        <form onSubmit={handleSubmit}>
           <input
             type="text"
             placeholder="Your Full Name"
@@ -53,11 +77,14 @@ const Contact = () => {
             required
           />
           <input
-            type="text"
+            type="email"
             placeholder="Your Email"
             name="user_email"
             required
+            value={email}
+            onChange={handleEmailChange}
           />
+          {emailError && <span className="error">{emailError}</span>}
           <textarea
             placeholder="Your message"
             rows="7"
