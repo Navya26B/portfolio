@@ -1,96 +1,101 @@
-/* intro.css */
 .about__container {
-    display: grid;
-    grid-template-columns: 35% 50%;
-    gap: 15%;
+  display: grid;
+  grid-template-columns: 35% 50%;
+  gap: 15%;
+}
+
+.about__me {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 2rem;
+  background: linear-gradient(45deg, transparent, var(--color-primary), transparent);
+  display: grid;
+  place-items: center;
+}
+
+.about__me-image {
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.about__cards {
+  display: grid;
+  grid-template-columns: repeat(1fr);
+  gap: 1.5rem;
+}
+
+.about__card {
+  background: var(--color-bg-variant);
+  border: 1px solid transparent;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.about__card:hover {
+  background: transparent;
+  border-color: var(--color-primary-variant);
+  cursor: default;
+}
+
+.about__icon {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.about__card h5 {
+  font-size: 1rem;
+}
+
+.about__card small {
+  font-size: 0.9rem;
+  color: var(--color-light);
+}
+
+.about__content p {
+  margin: 2rem 0 2.6rem;
+  color: var(--color-light);
+  opacity: 0; /* Initially hidden */
+  transform: translateX(-10%); /* Slide from slightly off-screen */
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.about__content p.slide-in {
+  opacity: 1;
+  transform: translateX(0); /* Slide to the original position */
+}
+
+@media screen and (max-width: 1024px) {
+  .about__container {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
-  
+
   .about__me {
-    width: 100%;
-    aspect-ratio: 1/1;
-    border-radius: 2rem;
-    background: linear-gradient(45deg, transparent, var(--color-primary), transparent);
-    display: grid;
-    place-items: center;
+    width: 50%;
+    margin: 2rem auto 4rem;
   }
-  
-  .about__me-image {
-    border-radius: 2rem;
-    overflow: hidden;
-  }
-  
-  .about__cards {
-    display: grid;
-    grid-template-columns: repeat(1fr);
-    gap: 1.5rem;
-  }
-  
-  .about__card {
-    background: var(--color-bg-variant);
-    border: 1px solid transparent;
-    border-radius: 1rem;
-    padding: 2rem;
-    text-align: center;
-    transition: var(--transition);
-  }
-  
-  .about__card:hover {
-    background: transparent;
-    border-color: var(--color-primary-variant);
-    cursor: default;
-  }
-  
-  .about__icon {
-    color: var(--color-primary);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .about__card h5 {
-    font-size: 1rem;
-  }
-  
-  .about__card small {
-    font-size: 0.9rem;
-    color: var(--color-light);
-  }
-  
+
   .about__content p {
-    margin: 2rem 0 2.6rem;
-    color: var(--color-light);
-    opacity: 0; /* Initially hidden */
-    transform: translateX(-100%); /* Slide from left */
-    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    margin: 1rem 0 1.5rem;
+    transform: translateX(-5%); /* Adjust for smaller screens */
   }
-  
-  .about__content p.slide-in {
-    opacity: 1;
-    transform: translateX(0); /* Slide to the original position */
+}
+
+@media screen and (max-width: 600px) {
+  .about__me {
+    width: 65%;
+    margin: 0rem auto 3rem;
   }
-  
-  @media screen and (max-width: 1024px) {
-    .about__container {
-      grid-template-columns: 1fr;
-      gap: 0;
-    }
-  
-    .about__me {
-      width: 50%;
-      margin: 2rem auto 4rem;
-    }
-  
-    .about__content p {
-      margin: 1rem 0 1.5rem;
-    }
+
+  .about__cards {
+    grid-template-columns: 1fr 1fr;
   }
-  
-  @media screen and (max-width: 600px) {
-    .about__me {
-      width: 65%;
-      margin: 0rem auto 3rem;
-    }
-  
-    .about__cards {
-      grid-template-columns: 1fr 1fr;
-    }  
+
+  .about__content p {
+    margin: 1rem 0;
+    transform: translateX(-5%); /* Adjust for smaller screens */
+  }
 }
