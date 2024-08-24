@@ -1,9 +1,6 @@
 # My Portfolio
 Welcome to my portfolio repository. 
 
-![screencapture-Portfolio](https://github.com/user-attachments/assets/ff5f6bda-fd10-4670-ae79-e06101c5e266)
-
-
 ## Components
 ### Header
 The header component typically includes navigation links that allow users to download my CV and jump to the contact section. It provides a quick overview of the main sections and is usually fixed at the top of the page for easy access.
