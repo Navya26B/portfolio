@@ -61,9 +61,6 @@ const Intro = () => {
             developers to create seamless user experiences. I built a strong
             foundation in front-end technologies.
           </p>
-          <a href="#contact" className="btn btn-primary">
-            Let's Talk
-          </a>
         </div>
       </div>
     </section>
